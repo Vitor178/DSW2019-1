@@ -22,7 +22,7 @@ public class SiteDAO {
 
     //modificar o bd
     protected Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:derby://localhost:1527/Livraria", "root", "root");
+        return DriverManager.getConnection("jdbc:derby://localhost:1527/teste", "root", "root");
     }
 
     public void insert(Site site) {
