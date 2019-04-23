@@ -8,8 +8,11 @@
     </head>
     <body>
         <center>
-            <h1>Erro</h1>
-            <h2><%= exception.getMessage()%><br/> </h2>
+            <br>
+            <br>
+            <img src="/img/erro.png" alt="erro" class="imagem-erro">
+            
+            <!-- <h2><%= exception.getMessage()%><br/> </h2> -->
         </center>	
     </body>
 </html>
