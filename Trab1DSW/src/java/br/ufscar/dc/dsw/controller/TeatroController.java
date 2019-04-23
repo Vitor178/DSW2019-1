@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@WebServlet(urlPatterns = "/")
+@WebServlet(urlPatterns = {"/teatro/*"})
 public class TeatroController extends HttpServlet {
 
     private TeatroDAO dao;
@@ -30,7 +30,9 @@ public class TeatroController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
-        String action = request.getServletPath();
+        String uri = request.getRequestURI();
+        String action = uri.substring(uri.lastIndexOf('/'));
+        
         try {
             switch (action) {
                 case "/cadastro":
@@ -58,18 +60,17 @@ public class TeatroController extends HttpServlet {
     }
 
 
-    // Teatro
     private void lista(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         List<Teatro> listaTeatro = dao.getAll();
         request.setAttribute("listaTeatro", listaTeatro);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("teatro/lista.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatro_template/lista.jsp");
         dispatcher.forward(request, response);
     }
 
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("teatro/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatro_template/formulario.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -77,7 +78,7 @@ public class TeatroController extends HttpServlet {
             throws ServletException, IOException {
         int cnpj = Integer.parseInt(request.getParameter("cnpj"));
         Teatro Teatro = dao.get(cnpj);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("teatro/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatro_template/formulario.jsp");
         request.setAttribute("Teatro", Teatro);
         dispatcher.forward(request, response);
     }
