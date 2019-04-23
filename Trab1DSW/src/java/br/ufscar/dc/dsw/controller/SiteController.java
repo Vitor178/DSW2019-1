@@ -11,8 +11,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+ 
+@WebServlet(urlPatterns = {"/site/*"})
 
-//@WebServlet(urlPatterns = "/")
+
 public class SiteController extends HttpServlet {
 
     private SiteDAO dao;
@@ -31,14 +33,15 @@ public class SiteController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
-        String action = request.getServletPath();
+        String uri = request.getRequestURI();
+        String action = uri.substring(uri.lastIndexOf('/'));
 
         try {
             switch (action) {
                 case "/cadastro":
                     apresentaFormCadastro(request, response);
                     break;
-                case "/insercao":
+                case "insercao":
                     insere(request, response);
                     break;
                 case "/remocao":
@@ -63,13 +66,13 @@ public class SiteController extends HttpServlet {
             throws ServletException, IOException {
         List<Site> listaSite = dao.getAll();
         request.setAttribute("listaSite", listaSite);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("site/lista.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/site_template/lista.jsp");
         dispatcher.forward(request, response);
     }
 
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("site/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/site_template/formulario.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -77,7 +80,7 @@ public class SiteController extends HttpServlet {
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Site site = dao.get(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("site/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/site_template/formulario.jsp");
         request.setAttribute("site", site);
         dispatcher.forward(request, response);
     }
