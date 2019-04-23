@@ -21,7 +21,7 @@ public class TeatroDAO {
     }
 
     protected Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:derby://localhost:1527/Livraria", "root", "root");
+        return DriverManager.getConnection("jdbc:derby://localhost:1527/DSW1", "root", "root");
     }
 
     public void insert(Teatro teatro) {
