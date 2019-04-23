@@ -1,31 +1,19 @@
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<html>
-    <body>
-        <h2>Bemvindo
-            <%=request.getUserPrincipal().getName().toString()%>
-        </h2>
-        <h2> teste </h2>
-
-        <sec:authorize access="hasRole('ADMIN')">
-
-            Este conteúdo só será visível para usuários que desempenhem 
-            o papel "ADMIN" <br/><br/>
-
-            <a href="admin/admin.jsp">Área de Administrador</a>
-        </sec:authorize>
-
-        <sec:authorize access="hasRole('USER')">
-            Este conteúdo só será visível para usuários que desempenhem 
-            o papel "USER" <br/><br/>
-
-            <a href="user/user.jsp">Área de Usuário</a>
-        </sec:authorize>
-            
-            <sec:authorize access="hasRole('ANONIMO')">
-            Este conteúdo só será visível para usuários que desempenhem 
-            o papel "ANONIMO" <br/><br/>
-
-            <a href="aninimo/anonimo.jsp">Área anonima</a>
-        </sec:authorize>
-    </body>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang='eng' dir='ltr'>
+<head>
+	<meta charset="utf-8"http-equiv="Content-Type" content="text/html;" >
+	<title>Login Form</title>
+	<link rel="styleSheet" type="text/css" href="css/style.css" media="screen" >
+</head>
+<body>
+	<form class="box" action="index.jsp" method="post">
+		<h1>Login</h1>
+			<input type="text" name="" placeholder="Username">
+			<input type="password" name="" placeholder="Password">
+			<input type="submit" name="" value="Login">
+                        <a href="/site" >Lista Site</a>
+                        <a href="/teatro" >Lista Teatro</a>
+		</form>
+</body>
 </html>
