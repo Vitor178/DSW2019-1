@@ -26,7 +26,7 @@
                     <caption>
                         <h2>
                             <c:if test="${teatro != null}">
-                                Edição
+                                edicao
                             </c:if>
                             <c:if test="${teatro == null}">
                                 Cadastro
@@ -83,6 +83,8 @@
                     </tr>
                 </table>
             </form>
+         <br />
+        <a href="/index.jsp">Tela login</a>
     </div>
     <c:if test="${!empty requestScope.mensagens}">
         <ul class="erro">

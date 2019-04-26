@@ -12,7 +12,7 @@
 			<input type="text" name="" placeholder="Username">
 			<input type="password" name="" placeholder="Password">
 			<input type="submit" name="" value="Login">
-                        <a href="/site" >Lista Site</a>
+                        <a href="/site" >Lista SIte</a>
                         <a href="/teatro" >Lista Teatro</a>
 		</form>
 </body>

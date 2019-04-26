@@ -45,6 +45,8 @@
                 </tr>
             </c:forEach>
         </table>
+        <br />
+        <a href="/index.jsp">Tela login</a>
     </div>	
 </body>
 </html>

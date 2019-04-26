@@ -35,7 +35,7 @@ public class SiteDAO {
             statement.setString(3, site.getSenha());
             statement.setString(4, site.getUrl());
             statement.setString(5, site.getNome());
-            statement.setInt(6, site.getTelefone());
+            statement.setString(6, site.getTelefone());
             statement.executeUpdate();
             statement.close();
             conn.close();
@@ -57,7 +57,7 @@ public class SiteDAO {
                 String senha = resultSet.getString("senha");
                 String url = resultSet.getString("url");
                 String nome = resultSet.getString("nome");
-                int telefone = resultSet.getInt("telefone");                
+                String telefone = resultSet.getString("telefone");                
                 Site site = new Site(id, email, senha, url, nome, telefone);
                 listaSite.add(site);
             }
@@ -90,11 +90,11 @@ public class SiteDAO {
         try {
             Connection conn = this.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, site.getEmail());
-            statement.setString(2, site.getSenha());
-            statement.setString(3, site.getUrl());
-            statement.setString(4, site.getNome());
-            statement.setInt(5, site.getTelefone());
+            statement.setString(2, site.getEmail());
+            statement.setString(3, site.getSenha());
+            statement.setString(4, site.getUrl());
+            statement.setString(5, site.getNome());
+            statement.setString(6, site.getTelefone());
             statement.executeUpdate();
             statement.close();
             conn.close();
@@ -116,7 +116,7 @@ public class SiteDAO {
                 String senha = resultSet.getString("senha");
                 String url = resultSet.getString("url");
                 String nome = resultSet.getString("nome");
-                int telefone = resultSet.getInt("telefone"); 
+                String telefone = resultSet.getString("telefone"); 
                 site = new Site(id, email, senha, url, nome, telefone);
             }
             resultSet.close();

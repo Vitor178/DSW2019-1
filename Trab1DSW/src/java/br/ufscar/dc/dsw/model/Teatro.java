@@ -2,13 +2,13 @@ package br.ufscar.dc.dsw.model;
 
 public class Teatro {
 
-    private Integer cnpj;
+    private String cnpj;
     private String email;
     private String senha;
     private String nome;
     private String cidade;
 
-    public Teatro(Integer cnpj) {
+    public Teatro(String cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -19,16 +19,16 @@ public class Teatro {
         this.cidade = cidade;
     }
     
-    public Teatro(Integer cnpj, String email, String senha, String nome, String cidade){
+    public Teatro(String cnpj, String email, String senha, String nome, String cidade){
         this(email,senha,nome,cidade);
         this.cnpj = cnpj;
     }
 
-    public Integer getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(Integer cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 

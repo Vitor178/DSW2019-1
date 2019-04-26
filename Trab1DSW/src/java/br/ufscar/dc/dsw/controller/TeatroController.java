@@ -76,16 +76,16 @@ public class TeatroController extends HttpServlet {
 
     private void apresentaFormEdicao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int cnpj = Integer.parseInt(request.getParameter("cnpj"));
-        Teatro Teatro = dao.get(cnpj);
+        String cnpj = request.getParameter("cnpj");
+        Teatro teatro = dao.get(cnpj);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/teatro_template/formulario.jsp");
-        request.setAttribute("Teatro", Teatro);
+        request.setAttribute("teatro", teatro);
         dispatcher.forward(request, response);
     }
 
     private void insere(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");        
-        int cnpj = Integer.parseInt(request.getParameter("cnpj"));
+        String cnpj = request.getParameter("cnpj");
         String email = request.getParameter("email");                
         String senha = request.getParameter("senha");
         String nome = request.getParameter("nome");
@@ -98,18 +98,19 @@ public class TeatroController extends HttpServlet {
     private void atualize(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         request.setCharacterEncoding("UTF-8");
+        String cnpj = request.getParameter("cnpj");
         String email = request.getParameter("email");                
         String senha = request.getParameter("senha");
         String nome = request.getParameter("nome");
         String cidade = request.getParameter("cidade");
-        Teatro teatro = new Teatro(email,senha, nome,cidade);
+        Teatro teatro = new Teatro(cnpj,email,senha, nome,cidade);
         dao.update(teatro);
         response.sendRedirect("lista");
     }
 
     private void remove(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        int cnpj = Integer.parseInt(request.getParameter("cnpj"));
+        String cnpj = request.getParameter("cnpj");
         Teatro teatro = new Teatro(cnpj);
         dao.delete(teatro);
         response.sendRedirect("lista");

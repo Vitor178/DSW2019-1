@@ -41,7 +41,7 @@ public class SiteController extends HttpServlet {
                 case "/cadastro":
                     apresentaFormCadastro(request, response);
                     break;
-                case "insercao":
+                case "/insercao":
                     insere(request, response);
                     break;
                 case "/remocao":
@@ -93,7 +93,7 @@ public class SiteController extends HttpServlet {
         String senha = request.getParameter("senha");
         String url = request.getParameter("url");
         String nome = request.getParameter("nome");
-        Integer telefone = Integer.parseInt(request.getParameter("telefone"));
+        String telefone = request.getParameter("telefone");
         Site site = new Site(id, email, senha, url, nome, telefone);
         dao.insert(site);
         response.sendRedirect("lista");
@@ -107,7 +107,7 @@ public class SiteController extends HttpServlet {
         String senha = request.getParameter("senha");
         String url = request.getParameter("url");
         String nome = request.getParameter("nome");
-        Integer telefone = Integer.parseInt(request.getParameter("telefone"));
+        String telefone = request.getParameter("telefone");
         Site site = new Site(email, senha, url, nome, telefone);
         dao.update(site);
         response.sendRedirect("lista");

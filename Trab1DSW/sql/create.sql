@@ -1,37 +1,51 @@
 CREATE TABLE Admin (
-	cpf integer not null,
-	prenome varchar(30)  not null,
-	sobrenome varchar(30) not null,
-	email varchar(30) not null,
-	senha  varchar(30) not null,
-  constraint admin_pk primary key (cpf)
+    cpf integer not null,
+    prenome varchar(50)  not null,
+    sobrenome varchar(50) not null,
+    email varchar(50) not null,
+    senha  varchar(50) not null,
+  constraint Admin_pk primary key (cpf)
 );
 
-create table Site (
-  id integer not null,
-  email varchar(256) not null,
-  senha varchar(256) not null,
-  url varchar(256) not null,
-  nome varchar(256) not null,
-  telefone integer not null,
-  CONSTRAINT Livro_PK PRIMARY KEY (id));
+CREATE TABLE  Site (
+    id integer not null,
+    email varchar(50) not null,
+    senha varchar(50) not null,
+    url varchar(50) not null,
+    nome varchar(50) not null,
+    telefone varchar(50) not null,
+  constraint Site_pk primary key (id)
+);
 
 CREATE TABLE Teatro (
-  cnpj integer,	
-	email varchar(30) not null,
-	senha varchar(20) not null,
-	nome varchar(30) not null,
-	cidade varchar(30) not null,
-  constraint cnpj_pk primary key (cnpj)
+    cnpj varchar(50) not null,	
+    email varchar(50) not null,
+    senha varchar(50) not null,
+    nome varchar(50) not null,
+    cidade varchar(50) not null,
+  constraint Teatro_pk primary key (cnpj)
 );
 
 CREATE TABLE Promocao(
-  id integer,
-  cnpj integer,
-	preco integer not null,
-	nomePeca varchar(100) not null,
-	dia	varchar(16) not null,
-	horario varchar(16) not null, 
+    id integer,
+    cnpj varchar(50),
+    preco float not null,
+    nomePeca varchar(100) not null,
+    dia	varchar(16) not null,
+    horario varchar(16) not null, 
   constraint fk_id foreign key (id) references Site(id),
   constraint fk_cnpj foreign key (cnpj) references Teatro(cnpj)
 );
+
+
+Insert into Site values
+(1,'site1@site.com','123456','site1.com.br', 'site1', '0800-1234'),
+(2,'site2@site.com','123456','site2.com.br', 'site2', '0800-4321'),
+(3,'site3@site.com','123456','site3.com.br', 'site3', '0800-8000'),
+(4,'site4@site.com','123456','site4.com.br', 'site4', '0800-8080');
+
+Insert into Teatro values
+('12345678912345', 'teatro1@teatro.com', '123456', 'teatro1', 'sao carlos'),
+('12345678912346', 'teatro2@teatro.com', '123456', 'teatro2', 'sao paulo'),
+('12345678912347', 'teatro3@teatro.com', '123456', 'teatro3', 'catanduva'),
+('12345678912348', 'teatro4@teatro.com', '123456', 'teatro4', 'são josé do rio preto');

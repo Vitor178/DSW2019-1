@@ -8,13 +8,13 @@ public class Site {
     private String senha;
     private String url;
     private String nome;
-    private Integer telefone;
+    private String telefone;
 
     public Site(Integer id) {
         this.id = id;
     }
 
-    public Site(String email, String senha, String url, String nome, Integer telefone) {
+    public Site(String email, String senha, String url, String nome, String telefone) {
         this.email = email;
         this.senha = senha;
         this.url = url;
@@ -22,7 +22,7 @@ public class Site {
         this.telefone = telefone;
     }
     
-    public Site(Integer id, String email, String senha, String url, String nome, Integer telefone){
+    public Site(Integer id, String email, String senha, String url, String nome, String telefone){
         this(email,senha,url,nome,telefone);
         this.id = id;
     }
@@ -67,11 +67,11 @@ public class Site {
         this.nome = nome;
     }
 
-    public Integer getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Integer telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
     

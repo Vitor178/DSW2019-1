@@ -34,9 +34,9 @@
                     <td><c:out value="${teatro.nome}" /></td>
                     <td><c:out value="${teatro.cidade}" /></td>
                     <td>
-                        <a href="edicao?cnpj=<c:out value='${teatro.cnpj}' />">Edição</a>
+                        <a href="/teatro/edicao?cnpj=<c:out value='${teatro.cnpj}' />">Edição</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="remocao?cnpj=<c:out value='${teatro.cnpj}' />" 
+                        <a href="/teatro/remocao?cnpj=<c:out value='${teatro.cnpj}' />" 
                            onclick="return confirm('Tem certeza de que deseja excluir este item?');">
                             Remoção
                         </a>                    	
@@ -44,6 +44,8 @@
                 </tr>
             </c:forEach>
         </table>
+        <br />
+        <a href="/index.jsp">Tela login</a>
     </div>	
 </body>
 </html>

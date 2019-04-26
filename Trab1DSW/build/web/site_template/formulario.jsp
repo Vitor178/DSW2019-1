@@ -17,10 +17,10 @@
     </center>
     <div align="center">
         <c:if test="${site != null}">
-            <form action="site/atualizacao" method="post">
+            <form action="atualizacao" method="post">
             </c:if>
             <c:if test="${site == null}">
-                <form action="site/insercao" method="post">
+                <form action="insercao" method="post">
                 </c:if>
                 <table border="1" cellpadding="5">
                     <caption>
@@ -35,7 +35,15 @@
                     </caption>
                     <c:if test="${site != null}">
                         <input type="hidden" name="id" value="<c:out value='${site.id}' />" />
-                    </c:if>            
+                    </c:if>          
+                   <tr>
+                        <th>Id: </th>
+                        <td>
+                            <input type="number" name="id" size="45" required
+                                   value="<c:out value='${site.id}' />"
+                                   />
+                        </td>
+                    </tr>
                     <tr>
                         <th>Email: </th>
                         <td>
@@ -71,7 +79,7 @@
                     <tr>
                         <th>Telefone: </th>
                         <td>
-                            <input type="number" name="telefone" size="45" required  
+                            <input type="text" name="telefone" size="45" required  
                                    value="<c:out value='${site.telefone}' />"
                                    />
                         </td>
@@ -83,6 +91,8 @@
                     </tr>
                 </table>
             </form>
+          <br />
+        <a href="/index.jsp">Tela login</a>
     </div>
     <c:if test="${!empty requestScope.mensagens}">
         <ul class="erro">
