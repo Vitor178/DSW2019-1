@@ -85,16 +85,17 @@ public class SiteDAO {
     }
 
     public void update(Site site) {
-        String sql = "UPDATE Site SET email = ?, senha = ?, url = ?, nome = ?, nome = ?, telefone = ?";
+        String sql = "UPDATE Site SET email = ?, senha = ?, url = ?, nome = ?, telefone = ?";
         sql += " WHERE id = ?";
         try {
             Connection conn = this.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(2, site.getEmail());
-            statement.setString(3, site.getSenha());
-            statement.setString(4, site.getUrl());
-            statement.setString(5, site.getNome());
-            statement.setString(6, site.getTelefone());
+            statement.setString(1, site.getEmail());
+            statement.setString(2, site.getSenha());
+            statement.setString(3, site.getUrl());
+            statement.setString(4, site.getNome());
+            statement.setString(5, site.getTelefone());
+            statement.setInt(6, site.getId());
             statement.executeUpdate();
             statement.close();
             conn.close();

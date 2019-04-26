@@ -103,12 +103,13 @@ public class SiteController extends HttpServlet {
             throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
+        Integer id = Integer.parseInt(request.getParameter("id"));
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
         String url = request.getParameter("url");
         String nome = request.getParameter("nome");
         String telefone = request.getParameter("telefone");
-        Site site = new Site(email, senha, url, nome, telefone);
+        Site site = new Site(id, email, senha, url, nome, telefone);
         dao.update(site);
         response.sendRedirect("lista");
     }

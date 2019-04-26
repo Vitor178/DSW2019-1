@@ -83,16 +83,16 @@ public class TeatroDAO {
     }
 
     public void update(Teatro teatro) {
-        String sql = "UPDATE Teatro SET cnpj = ?, email = ?, senha = ?, nome = ?, cidade = ?";
+        String sql = "UPDATE Teatro SET email = ?, senha = ?, nome = ?, cidade = ?";
         sql += " WHERE cnpj = ?";
         try {
             Connection conn = this.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, teatro.getCnpj());
-            statement.setString(2, teatro.getEmail());
-            statement.setString(3, teatro.getSenha());
-            statement.setString(4, teatro.getNome());
-            statement.setString(5, teatro.getCidade());
+            statement.setString(1, teatro.getEmail());
+            statement.setString(2, teatro.getSenha());
+            statement.setString(3, teatro.getNome());
+            statement.setString(4, teatro.getCidade());
+            statement.setString(5, teatro.getCnpj());
             statement.executeUpdate();
             statement.close();
             conn.close();
