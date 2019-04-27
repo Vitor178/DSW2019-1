@@ -50,3 +50,8 @@ Insert into Teatro values
 ('55.793.329/0001-49', 'teatroCA@gmail.com', '159753', 'Aniz Pachá', 'catanduva'),
 ('79.811.601/0001-34', 'teatroRJ@gmail.com','753159','Municipal do Rio de Janeiro','Rio de Janeiro'),
 ('61.455.466/0001-76', 'teatroSJRP@gmail.com', '789456', 'Paulo Moura', 'São José do Rio Preto');
+
+Insert into Promocao values
+(1, '58.025.303/0001-49', 30, 'Os três porquinhos', '16/04', '20:00'),
+(2, '14.036.553/0001-09', 20, 'A Bela e a Fera', '06/05', '19:00'),
+(3, '55.793.329/0001-49', 25, 'O mágico de OZ', '15/05', '20:00' );

@@ -16,6 +16,7 @@
 			<input type="submit" value="<fmt:message key="Login"/>">
                         <a href="/site" ><fmt:message key="Sites"/></a>
                         <a href="/teatro" ><fmt:message key="Theaters"/></a>
+                        <a href="/promocao" ><fmt:message key="promotions"/></a>
 		</form>
     </fmt:bundle>
 </body>

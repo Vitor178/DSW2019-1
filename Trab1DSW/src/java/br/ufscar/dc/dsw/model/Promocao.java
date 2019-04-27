@@ -2,32 +2,43 @@ package br.ufscar.dc.dsw.model;
 
 
 public class Promocao {
-    private Integer preco;
+    private Integer id;
+    private String cnpj;
+    private float preco;
     private String nomePeca;
     private String dia;
     private String horario;
-    private Integer id;
-    private Integer cnpj;
 
-
-    public Promocao(Integer preco, String nomePeca, String dia, String horario, Integer id, Integer cnpj) {
+    public Promocao(Integer id, String cnpj, float preco, String nomePeca, String dia, String horario) {
+        this.id = id;
+        this.cnpj = cnpj;
         this.preco = preco;
         this.nomePeca = nomePeca;
         this.dia = dia;
         this.horario = horario;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
-    public Promocao(int preco, String nomePeca, String dia, String horario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Integer getPreco() {
+    public float getPreco() {
         return preco;
     }
 
-    public void setPreco(Integer preco) {
+    public void setPreco(float preco) {
         this.preco = preco;
     }
 
@@ -46,29 +57,18 @@ public class Promocao {
     public void setDia(String dia) {
         this.dia = dia;
     }
-    
+
     public String getHorario() {
         return horario;
     }
 
     public void setHorario(String horario) {
         this.horario = horario;
-    }    
+    }
     
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(Integer cnpj) {
-        this.cnpj = cnpj;
-    }    
+    
     
 }
+
+
+    
