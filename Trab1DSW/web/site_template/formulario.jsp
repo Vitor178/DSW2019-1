@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
-    <fmt:bundle basename="i18n.Messagess">
+    <fmt:bundle basename="i18n.Messages">
     <head>
         <title><fmt:message key="reservation.sites"/></title>
     </head>
