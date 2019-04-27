@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
+    <fmt:bundle basename="i18n.Messages">
     <head>
-        <title>Lista Teatros</title>
+        <title><fmt:message key="List.theaters"/></title>
     </head>
     <body>
     <center>
-        <h1>Gerenciamento de Teatros</h1>
+        <h1><fmt:message key="Theater.management"/></h1>
         <h2>
-            <a href="cadastro">Adicione Novo Teatro</a>
+            <a href="cadastro"><fmt:message key="Add.theater"/></a>
             &nbsp;&nbsp;&nbsp;
-            <a href="lista">Lista de Teatros</a>
+            <a href="lista"><fmt:message key="List.theaters"/></a>
 
         </h2>
     </center>
@@ -26,10 +28,10 @@
                     <caption>
                         <h2>
                             <c:if test="${teatro != null}">
-                                edicao
+                                <fmt:message key="edit"/>
                             </c:if>
                             <c:if test="${teatro == null}">
-                                Cadastro
+                                <fmt:message key="register"/>
                             </c:if>
                         </h2>
                     </caption>
@@ -37,7 +39,7 @@
                         <input type="hidden" name="cnpj" value="<c:out value='${teatro.cnpj}' />" />
                     </c:if>            
                     <tr>
-                        <th>CNPJ: </th>
+                        <th><fmt:message key="cnpj"/> </th>
                         <td>
                             <input type="text" name="cnpj" size="45" required
                                    value="<c:out value='${teatro.cnpj}' />"
@@ -45,7 +47,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Email: </th>
+                        <th><fmt:message key="email"/> </th>
                         <td>
                             <input type="text" name="email" size="45" required
                                    value="<c:out value='${teatro.email}' />"
@@ -53,7 +55,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Senha: </th>
+                        <th><fmt:message key="senha"/> </th>
                         <td>
                             <input type="text" name="senha" size="45" required
                                    value="<c:out value='${teatro.senha}' />"
@@ -61,7 +63,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Nome: </th>
+                        <th><fmt:message key="nome"/> </th>
                         <td>
                             <input type="text" name="nome" size="45" required  
                                    value="<c:out value='${teatro.nome}' />"
@@ -69,7 +71,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Cidade: </th>
+                        <th><fmt:message key="cidade"/> </th>
                         <td>
                             <input type="text" name="cidade" size="45" required  
                                    value="<c:out value='${teatro.cidade}' />"
@@ -84,7 +86,7 @@
                 </table>
             </form>
          <br />
-        <a href="/index.jsp">Tela login</a>
+        <a href="/index.jsp"><fmt:message key="login.page"/></a>
     </div>
     <c:if test="${!empty requestScope.mensagens}">
         <ul class="erro">
@@ -94,4 +96,5 @@
         </ul>
     </c:if>
 </body>
+</fmt:bundle>
 </html>

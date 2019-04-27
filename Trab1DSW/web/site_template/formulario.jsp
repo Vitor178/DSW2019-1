@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
+    <fmt:bundle basename="i18n.Messagess">
     <head>
-        <title>Sites de Reserva</title>
+        <title><fmt:message key="reservation.sites"/></title>
     </head>
     <body>
     <center>
-        <h1>Gerenciamento de Sites</h1>
+        <h1><fmt:message key="sites.management"/></h1>
         <h2>
-            <a href="cadastro">Adicione Novo Site</a>
+            <a href="cadastro"><fmt:message key="Add.site"/></a>
             &nbsp;&nbsp;&nbsp;
-            <a href="lista">Lista de Sites</a>
+            <a href="lista"><fmt:message key="List.site"/></a>
 
         </h2>
     </center>
@@ -26,10 +28,10 @@
                     <caption>
                         <h2>
                             <c:if test="${site != null}">
-                                Edição
+                                <fmt:message key="edit"/>
                             </c:if>
                             <c:if test="${site == null}">
-                                Cadastro
+                                <fmt:message key="register"/>
                             </c:if>
                         </h2>
                     </caption>
@@ -37,7 +39,7 @@
                         <input type="hidden" name="id" value="<c:out value='${site.id}' />" />
                     </c:if>          
                    <tr>
-                        <th>Id: </th>
+                        <th><fmt:message key="id"/> </th>
                         <td>
                             <input type="number" name="id" size="45" required
                                    value="<c:out value='${site.id}' />"
@@ -45,7 +47,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Email: </th>
+                        <th><fmt:message key="email"/> </th>
                         <td>
                             <input type="text" name="email" size="45" required
                                    value="<c:out value='${site.email}' />"
@@ -53,7 +55,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Senha: </th>
+                        <th><fmt:message key="senha"/> </th>
                         <td>
                             <input type="text" name="senha" size="45" required
                                    value="<c:out value='${site.senha}' />"
@@ -61,7 +63,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Url: </th>
+                        <th><fmt:message key="url"/> </th>
                         <td>
                             <input type="text" name="url" size="45" required
                                    value="<c:out value='${site.url}' />"
@@ -69,7 +71,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Nome: </th>
+                        <th><fmt:message key="nome"/> </th>
                         <td>
                             <input type="text" name="nome" size="45" required  
                                    value="<c:out value='${site.nome}' />"
@@ -77,7 +79,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Telefone: </th>
+                        <th><fmt:message key="telefone"/> </th>
                         <td>
                             <input type="text" name="telefone" size="45" required  
                                    value="<c:out value='${site.telefone}' />"
@@ -92,7 +94,7 @@
                 </table>
             </form>
           <br />
-        <a href="/index.jsp">Tela login</a>
+        <a href="/index.jsp"><fmt:message key="login.page"/></a>
     </div>
     <c:if test="${!empty requestScope.mensagens}">
         <ul class="erro">
@@ -102,4 +104,5 @@
         </ul>
     </c:if>
 </body>
+</fmt:bundle>
 </html>
