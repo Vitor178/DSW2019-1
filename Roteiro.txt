@@ -1,0 +1,2 @@
+banco: "jdbc:derby://localhost:1527/DSW1", "root", "root"
+Criar e popular tabelas: sql/create.sql
