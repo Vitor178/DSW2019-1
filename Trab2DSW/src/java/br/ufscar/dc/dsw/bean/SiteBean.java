@@ -57,4 +57,8 @@ public class SiteBean implements Serializable {
     public Site getSite() {
         return site;
     }
+    
+    /*public String addPromocao(){
+        
+    }*/
 }

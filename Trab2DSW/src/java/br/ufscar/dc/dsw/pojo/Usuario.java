@@ -5,9 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 
-@Entity
+//@Entity
+@MappedSuperclass
 public class Usuario implements Serializable {
 
     @Id
@@ -17,12 +19,6 @@ public class Usuario implements Serializable {
     private String senha;
     private Boolean ativo;
 
-    
-    /*public Usuario(String email, String senha, Boolean ativo) {
-        this.email = email;
-        this.senha = senha;
-        this.ativo = ativo;
-    }*/
 
     public String getEmail() {
         return email;

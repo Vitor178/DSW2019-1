@@ -1,7 +1,9 @@
 package br.ufscar.dc.dsw.pojo;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -10,13 +12,8 @@ public class Site extends Usuario implements Serializable {
     private String url;
     private String nome;
     private String telefone;
-
-   /* public Site(String url, String nome, String telefone, String email, String senha, Boolean ativo) {
-        super(email, senha, ativo);
-        this.url = url;
-        this.nome = nome;
-        this.telefone = telefone;
-    }*/
+    @OneToMany
+    private List<Promocao> promocoes;
 
     public String getUrl() {
         return url;
@@ -41,6 +38,14 @@ public class Site extends Usuario implements Serializable {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
 
+    public List<Promocao> getPromocoes() {
+        return promocoes;
+    }
+
+    public void setPromocoes(List<Promocao> promocoes) {
+        this.promocoes = promocoes;
+    }
+    
+    
 }

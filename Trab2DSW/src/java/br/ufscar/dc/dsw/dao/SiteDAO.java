@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 public class SiteDAO extends GenericDAO<Site>{
     
@@ -53,5 +54,13 @@ public class SiteDAO extends GenericDAO<Site>{
         Site site = em.find(Site.class, id);
         em.close();
         return site;
+    }
+    
+    public Site getByNome(String nome) {
+        EntityManager em = this.getEntityManager();
+        String sql = "SELECT e FROM Site e WHERE e.nome = :nome";
+        TypedQuery<Site> q = em.createQuery(sql, Site.class);
+        q.setParameter("nome", nome);
+        return q.getSingleResult();
     }
 }

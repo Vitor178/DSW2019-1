@@ -1,4 +1,4 @@
-package br.ufscar.dc.dsw.converter;
+/*package br.ufscar.dc.dsw.converter;
 
 import br.ufscar.dc.dsw.dao.EditoraDAO;
 import br.ufscar.dc.dsw.pojo.Editora;
@@ -22,4 +22,4 @@ public class EditoraConverter implements Converter{
         Editora editora = (Editora) o;
         return editora.getId().toString();
     }
-}
+}*/
