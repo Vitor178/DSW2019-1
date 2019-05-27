@@ -1,2 +1,7 @@
+Trab1DSW
+
 banco: "jdbc:derby://localhost:1527/Login", "root", "root"
 Criar ADMIN: br.ufscar.dc.dsw.dao.CriaUsuarios.java
+
+
+Trab2DSW
