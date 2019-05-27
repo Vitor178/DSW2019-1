@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Home Page</title>
+    </h:head>
+    <h:body>
+        <h2>#{msg['bemvindo']}
+            #{request.getUserPrincipal().getName().toString()}
+        </h2>
+        
+        <h:form>
+           
+                <li>
+                    <h:commandLink action="admin/index">#{msg['admin.label']}</h:commandLink>
+                </li>
+            
+                <li>
+                    <h:commandLink action="promocao/index">#{msg['promocao.crud.label']}</h:commandLink>
+                </li> 
+                
+                <li>
+                    <h:commandLink action="indexVisitanteSite">#{msg['site.label']}</h:commandLink>
+                </li>
+                
+                <li>
+                    <h:commandLink action="indexVisitanteTeatro">#{msg['teatro.label']}</h:commandLink>
+                </li>
+                
+                <li>
+                    <h:commandLink action="indexVisitantePromocao">#{msg['promocao.label']}</h:commandLink>
+                </li>
+            
+        </h:form>
+
+        <!--<h:form>
+            <sec:authorize ifAllGranted="ROLE_ADMIN">
+
+                Este conteúdo só será visível para usuários que desempenhem 
+                o papel "ADMIN" <br/><br/>
+
+                <h:commandLink action="admin/index">Área de Administrador</h:commandLink>
+            
+            </sec:authorize>
+
+            <sec:authorize ifAllGranted="ROLE_SITE">
+                Este conteúdo só será visível para usuários que desempenhem 
+                o papel "site" <br/><br/>
+
+                <h:commandLink action="user/index">Área de Usuário</h:commandLink>
+                
+            </sec:authorize>
+            
+            <sec:authorize ifAllGranted="ROLE_TEATRO">
+                Este conteúdo só será visível para usuários que desempenhem 
+                o papel "teatro" <br/><br/>
+
+                <h:commandLink action="user/index">Área de Usuário</h:commandLink>
+                
+            </sec:authorize>
+        </h:form>-->
+    </h:body>
+</html>
