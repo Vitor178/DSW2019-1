@@ -1,2 +1,2 @@
-banco: "jdbc:derby://localhost:1527/DSW1", "root", "root"
-Criar e popular tabelas: sql/create.sql
+banco: "jdbc:derby://localhost:1527/Login", "root", "root"
+Criar ADMIN: br.ufscar.dc.dsw.dao.CriaUsuarios.java
