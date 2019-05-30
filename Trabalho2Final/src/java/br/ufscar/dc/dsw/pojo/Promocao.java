@@ -18,7 +18,7 @@ public class Promocao implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private float preco;
-    private String nomePeca;
+    private String nome;
     @ManyToOne
     private Site site;
     @ManyToOne
@@ -43,12 +43,12 @@ public class Promocao implements Serializable {
         this.preco = preco;
     }
 
-    public String getNomePeca() {
-        return nomePeca;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomePeca(String nomePeca) {
-        this.nomePeca = nomePeca;
+    public void setNome(String nomePeca) {
+        this.nome = nomePeca;
     }
 
     public Site getSite() {

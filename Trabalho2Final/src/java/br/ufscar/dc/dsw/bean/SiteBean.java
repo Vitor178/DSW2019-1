@@ -18,7 +18,7 @@ public class SiteBean implements Serializable {
     private Site site;
 
     public String lista() {
-        return "site/index.xhtml";
+        return "site/index.xhtml?faces-redirect=true";
     }
 
     public String cadastra() {

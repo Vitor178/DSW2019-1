@@ -16,11 +16,11 @@
             <center>  
                 <h2><h:outputText value="#{msg['promocao.list.page.title']}"/></h2>  
             </center>  
-            <h:dataTable value="#{promocaoBean.promocao}" var="promocao"   
+            <h:dataTable value="#{promocaoBean.promocoes}" var="promocao"   
                          class="table table-striped table-hover table-bordered">   
                 <h:column>  
-                    <f:facet name="header">#{msg['promocao.nomePeca.label']}</f:facet>  
-                    <h:outputText value="#{promocao.nomePeca}"/>  
+                    <f:facet name="header">#{msg['promocao.name.label']}</f:facet>  
+                    <h:outputText value="#{promocao.nome}"/>  
                 </h:column>  
                 <h:column>  
                     <f:facet name="header">#{msg['promocao.site.label']}</f:facet>  
@@ -31,7 +31,7 @@
                     <h:outputText value="#{promocao.teatro}"/>  
                 </h:column>  
                 <h:column>  
-                    <f:facet name="header">#{msg['promocao.preco.label']}</f:facet>  
+                    <f:facet name="header">#{msg['promocao.price.label']}</f:facet>  
                     <h:outputText value="#{promocao.preco}"/>  
                 </h:column>                  
                 <h:column>  

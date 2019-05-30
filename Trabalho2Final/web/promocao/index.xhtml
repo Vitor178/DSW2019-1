@@ -2,7 +2,8 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
 <html xmlns="http://www.w3.org/1999/xhtml"  
       xmlns:h="http://xmlns.jcp.org/jsf/html"  
-      xmlns:f="http://xmlns.jcp.org/jsf/core">  
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:sec="http://www.springframework.org/security/tags">  
     <h:head>  
         <title>#{msg['promocao.list.page.title']}</title>
         <link rel="stylesheet" 
@@ -13,6 +14,7 @@
     </h:head>  
     <h:body>  
         <h:form>  
+            <sec:authorize ifAllGranted="ROLE_TEATRO">
             <center>  
                 <h2><h:outputText value="#{msg['promocao.list.page.title']}"/></h2>  
             </center>  
@@ -23,12 +25,12 @@
                     <h:outputText value="#{promocao.id}"/>  
                 </h:column>  
                 <h:column>  
-                    <f:facet name="header">#{msg['promocao.preco.label']}</f:facet>  
+                    <f:facet name="header">#{msg['promocao.price.label']}</f:facet>  
                     <h:outputText value="#{promocao.preco}"/>  
                 </h:column>  
                 <h:column>  
-                    <f:facet name="header">#{msg['promocao.nomePeca.label']}</f:facet>  
-                    <h:outputText value="#{promocao.nomePeca}"/>  
+                    <f:facet name="header">#{msg['promocao.name.label']}</f:facet>  
+                    <h:outputText value="#{promocao.nome}"/>  
                 </h:column>  
                 <h:column>  
                     <f:facet name="header">#{msg['promocao.site.label']}</f:facet>  
@@ -38,10 +40,7 @@
                     <f:facet name="header">#{msg['promocao.teatro.label']}</f:facet>  
                     <h:outputText value="#{promocao.teatro}"/>  
                 </h:column>
-                <h:column>  
-                    <f:facet name="header">#{msg['promocao.diahorario.label']}</f:facet>  
-                    <h:outputText value="#{promocao.diahorario}"/>  
-                </h:column>  
+                
                 <h:column>  
                     <f:facet name="header"></f:facet>  
                     <h:commandButton action = "#{promocaoBean.edita(promocao.id)}" value="#{msg['promocao.edit.command.label']}" class="btn btn-primary">  
@@ -59,6 +58,9 @@
                 <h:commandButton action = "#{promocaoBean.cadastra()}"   
                                  value="#{msg['promocao.create.command.label']}" class="btn btn-primary"></h:commandButton>
             </center>
+                 </sec:authorize>
+            <sec:authorize ifAllGranted="ROLE_ADMIN">#{msg['only.for.Theater']} </sec:authorize>
+            <sec:authorize ifAllGranted="ROLE_SITE">#{msg['only.for.Theater']} </sec:authorize>
             <br/>
             <center>
                 <h:commandButton action = "#{promocaoBean.volta()}"   

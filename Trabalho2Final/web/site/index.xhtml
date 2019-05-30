@@ -38,10 +38,7 @@
                     <f:facet name="header">#{msg['site.email.label']}</f:facet>  
                     <h:outputText value="#{site.email}"/>  
                 </h:column>
-                <h:column>  
-                    <f:facet name="header">#{msg['site.password.label']}</f:facet>  
-                    <h:outputText value="#{site.senha}"/>  
-                </h:column>
+                
                 <h:column>
                     <f:facet name="header"></f:facet>  
                     <h:commandButton action = "#{siteBean.edita(site.id)}" value="#{msg['site.edit.command.label']}" class="btn btn-primary">  

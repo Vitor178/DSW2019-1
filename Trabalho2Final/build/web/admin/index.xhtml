@@ -25,6 +25,10 @@
                 </li>
                 </sec:authorize>
             </ul>
+            <sec:authorize ifAllGranted="ROLE_TEATRO">#{msg['only.for.adm']} </sec:authorize>
+            <sec:authorize ifAllGranted="ROLE_SITE">#{msg['only.for.adm']} </sec:authorize>
+            <br/>
+        <h:commandLink action="/index">Voltar</h:commandLink>
         </h:form>
         <br/>
         <a href="#{request.contextPath}/logout">Logout</a>

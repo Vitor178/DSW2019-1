@@ -7,6 +7,7 @@
     <class>br.ufscar.dc.dsw.pojo.Promocao</class>
     <class>br.ufscar.dc.dsw.pojo.Site</class>
     <class>br.ufscar.dc.dsw.pojo.Teatro</class>
+    <class>br.ufscar.dc.dsw.pojo.Cidade</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/Login"/>

@@ -31,8 +31,26 @@ public class TeatroBean implements Serializable {
         teatro = dao.get(id);
         return "form.xhtml";
     }
-
+    
     public String salva() {
+        TeatroDAO dao = new TeatroDAO();
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        Papel papel = new PapelDAO().get(3L);
+        if (teatro.getId() == null){ 
+            teatro.setSenha(encoder.encode(teatro.getSenha()));
+            dao.save(teatro);
+            teatro.getPapel().add(papel);
+            teatro.setAtivo(true);
+            dao.update(teatro);
+        } else {
+            teatro.getPapel().clear();
+            teatro.getPapel().add(papel);
+            dao.update(teatro);
+        }
+        return "index.xhtml";
+    }
+
+    /*public String salva() {
         TeatroDAO dao = new TeatroDAO();
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         Papel papel = new PapelDAO().get(3L);
@@ -48,7 +66,7 @@ public class TeatroBean implements Serializable {
             dao.update(teatro);
         }
         return "index.xhtml";
-    }
+    }*/
 
     public String delete(Teatro teatro) {
         TeatroDAO dao = new TeatroDAO();

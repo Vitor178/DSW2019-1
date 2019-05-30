@@ -21,58 +21,40 @@
             </div>  
             <hr/>  
             <div class="form-group">  
-                <h:outputLabel for="preco" class="control-label col-sm-4">#{msg['promocao.preco.label']}</h:outputLabel>  
+                <h:outputLabel for="name" class="control-label col-sm-4">#{msg['promocao.name.label']}</h:outputLabel>  
                 <div class="col-sm-4">  
                     <h:inputText id="name" value="#{promocaoBean.promocao.nome}" class="form-control"   
-                                 validatorMessage="#{msg['promocao.preco.required.message']}">
+                                 validatorMessage="#{msg['promocao.name.required.message']}">
+                        <f:validateRequired/>
+                    </h:inputText>
+                    <h:message for="name"/>
+                </div>  
+            </div>  
+             
+            <div class="form-group">  
+                <h:outputLabel for="preco" class="control-label col-sm-4">#{msg['promocao.price.label']}</h:outputLabel>  
+                <div class="col-sm-4">  
+                    <h:inputText id="preco" value="#{promocaoBean.promocao.preco}" class="form-control"   
+                                 validatorMessage="#{msg['promocao.price.required.message']}"
+                                 a:type="Number" a:step="any" a:min="0.01">
                         <f:validateRequired/>
                     </h:inputText>
                     <h:message for="preco"/>
                 </div>  
-            </div>  
-                        
-            <!--<div class="form-group">  
-                <h:outputLabel for="nomePeca" class="control-label col-sm-4">#{msg['promocao.nomePeca.label']}</h:outputLabel>  
-                <div class="col-sm-4">  
-                    <h:inputText id="url" value="#{promocaoBean.promocao.url}" class="form-control"   
-                                 validatorMessage="#{msg['promocao.nomePeca.required.message']}">
-                        <f:validateRequired/>
-                    </h:inputText>
-                    <h:message for="nomePeca"/>
-                </div>  
-            </div>  
-            <div class="form-group">  
+            </div>
+            
+         
+             <div class="form-group">  
                 <h:outputLabel for="site" class="control-label col-sm-4">#{msg['promocao.site.label']}</h:outputLabel>  
-                <div class="col-sm-4">  
-                    <h:inputText id="telefone" value="#{promocaoBean.promocao.site}" class="form-control"   
-                                   validatorMessage="#{msg['promocao.site.required.message']}">
-                        <f:validateRequired/>
-                        
-                    </h:inputText>
+                <div class="col-sm-4">
+                    <h:selectOneMenu id="site" value="#{promocaoBean.promocao.site}">
+                        <f:selectItems value="#{promocaoBean.sites}"/>
+                        <f:converter converterId="SiteConverter" />
+                    </h:selectOneMenu>
                     <h:message for="site"/>
                 </div>  
             </div>
-            <div class="form-group">  
-                <h:outputLabel for="teatro" class="control-label col-sm-4">#{msg['promocao.teatro.label']}</h:outputLabel>  
-                <div class="col-sm-4">  
-                    <h:inputText id="email" value="#{promocaoBean.promocao.teatro}" class="form-control"   
-                                 validatorMessage="#{msg['promocao.teatro.required.message']}">
-                        <f:validateRequired/>
-                    </h:inputText>
-                    <h:message for="teatro"/>
-                </div>  
-            </div>
-            <div class="form-group">  
-                <h:outputLabel for="diahorario" class="control-label col-sm-4">#{msg['promocao.diahorario.label']}</h:outputLabel>  
-                <div class="col-sm-4">  
-                    <h:inputText id="diahorario" value="#{promocaoBean.promocao.diahoario}" class="form-control"   
-                                 validatorMessage="#{msg['promocao.diahorario.required.message']}">
-                        <f:validateRequired/>
-                    </h:inputText>
-                    <h:message for="diahorario"/>
-                </div>  
-            </div>-->
-         
+            
             <div class="form-group">  
                 <div class="col-sm-4"></div>  
                 <div class="col-sm-4">  
