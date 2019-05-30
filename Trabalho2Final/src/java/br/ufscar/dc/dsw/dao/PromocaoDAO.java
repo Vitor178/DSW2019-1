@@ -1,10 +1,12 @@
 package br.ufscar.dc.dsw.dao;
 
 import br.ufscar.dc.dsw.pojo.Promocao;
+import br.ufscar.dc.dsw.pojo.Site;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 public class PromocaoDAO extends GenericDAO<Promocao>{
     
@@ -55,5 +57,12 @@ public class PromocaoDAO extends GenericDAO<Promocao>{
         return promocao;
     }
     
+    public List<Promocao> getBySite(Site site) {
+        EntityManager em = this.getEntityManager();
+        String sql = "SELECT p FROM Promocao p WHERE p.site = :site";
+        TypedQuery<Promocao> q = em.createQuery(sql, Promocao.class);
+        q.setParameter("site", site);
+        return q.getResultList();
+    }
     
 }

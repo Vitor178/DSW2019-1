@@ -1,5 +1,6 @@
 package br.ufscar.dc.dsw.dao;
 
+
 import br.ufscar.dc.dsw.pojo.Site;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -63,4 +64,14 @@ public class SiteDAO extends GenericDAO<Site>{
         q.setParameter("nome", nome);
         return q.getSingleResult();
     }
+    
+    public Site getByEmail(String email) {
+        EntityManager em = this.getEntityManager();
+        String sql = "SELECT e FROM Site e WHERE e.email = :email";
+        TypedQuery<Site> q = em.createQuery(sql, Site.class);
+        q.setParameter("email", email);
+        return q.getSingleResult();
+    }
+    
+  
 }

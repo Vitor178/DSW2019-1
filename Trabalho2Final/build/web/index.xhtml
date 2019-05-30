@@ -15,26 +15,36 @@
                 <li>
                     <h:commandLink action="admin/index">#{msg['admin.label']}</h:commandLink>
                 </li>
-            
+                <br/>
+                <br/>
                 <li>
                     <h:commandLink action="promocao/index">#{msg['promocao.crud.label']}</h:commandLink>
-                </li> 
-                
-                <li>
-                    <h:commandLink action="indexVisitanteSite">#{msg['site.label']}</h:commandLink>
                 </li>
-                
-                <li>
-                    <h:commandLink action="indexVisitanteTeatro">#{msg['teatro.label']}</h:commandLink>
-                </li>
-                
+                <br/>
+                <br/>
                 <li>
                     <h:commandLink action="indexVisitantePromocao">#{msg['promocao.label']}</h:commandLink>
                 </li>
-            
+                <br/>
+                <br/>
                 <li>
-                    <h:commandLink action="buscaCidade">#{msg['buscaCidade.label']}</h:commandLink>
+                    <h:commandLink action="promocoesPorSite">#{msg['promocoes.por.site']}</h:commandLink>
                 </li>
+                <br/>
+                <br/>
+                <li>
+                    <h:commandLink action="indexVisitanteTeatro">#{msg['teatro.label']}</h:commandLink>
+                </li>
+                <br/>
+                <br/>
+                <li>
+                    <h:commandLink action="/faces/buscaCidade">#{msg['buscaCidade.label']}</h:commandLink>
+                </li>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <a href="#{request.contextPath}/logout">Logout</a>
             
         </h:form>
 

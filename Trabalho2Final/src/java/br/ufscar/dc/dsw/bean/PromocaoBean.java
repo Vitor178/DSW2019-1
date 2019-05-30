@@ -83,4 +83,14 @@ public class PromocaoBean implements Serializable {
         SiteDAO dao = new SiteDAO();
         return dao.getAll();
     }
+    
+    public List<Promocao> getPromocoesPorSite() throws SQLException {
+        PromocaoDAO dao = new PromocaoDAO();
+        SiteDAO dao1 = new SiteDAO();
+        HttpServletRequest req = (HttpServletRequest)
+        FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        String email = req.getUserPrincipal().getName();
+        
+        return dao.getBySite(dao1.getByEmail(email));
+    }
 }

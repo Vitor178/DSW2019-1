@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://xmlns.jcp.org/jsf/html"  
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:sec="http://www.springframework.org/security/tags">  
+    <h:head>  
+        <title>#{msg['promocao.list.page.title']}</title>
+        <link rel="stylesheet" 
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+              crossorigin="anonymous"/>
+        <h:outputStylesheet name="/css/estilo.css"/>
+    </h:head>  
+    <h:body>  
+        <h:form>  
+            <sec:authorize ifAllGranted="ROLE_SITE"> 
+            <center>  
+                <h2><h:outputText value="#{msg['promocao.list.page.title']}"/></h2>  
+            </center>  
+            <h:dataTable value="#{promocaoBean.promocoesPorSite}" var="promocao"   
+                         class="table table-striped table-hover table-bordered">   
+                <h:column>  
+                    <f:facet name="header">#{msg['promocao.name.label']}</f:facet>  
+                    <h:outputText value="#{promocao.nome}"/>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header">#{msg['promocao.site.label']}</f:facet>  
+                    <h:outputText value="#{promocao.site}"/>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header">#{msg['promocao.teatro.label']}</f:facet>  
+                    <h:outputText value="#{promocao.teatro}"/>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header">#{msg['promocao.price.label']}</f:facet>  
+                    <h:outputText value="#{promocao.preco}"/>  
+                </h:column>                  
+                <h:column>  
+                    <f:facet name="header">#{msg['promocao.diahorario.label']}</f:facet>  
+                    <h:outputText value="#{promocao.diahorario}"/>  
+                </h:column> 
+            </h:dataTable>  
+            <br/>  
+            </sec:authorize>
+            <center>
+            <sec:authorize ifAllGranted="ROLE_ADMIN">#{msg['only.for.Sites']} </sec:authorize>
+            <sec:authorize ifAllGranted="ROLE_TEATRO">#{msg['only.for.Sites']} </sec:authorize>
+            <br/>
+                <h:commandButton action = "#{promocaoBean.volta()}"   
+                                 value="#{msg['root.back.label']}" class="btn btn-success"></h:commandButton>
+            </center>  
+        </h:form>  
+    </h:body>
+</html>
