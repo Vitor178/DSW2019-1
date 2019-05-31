@@ -1,7 +1,19 @@
 Trabalho2Final
 
 banco: "jdbc:derby://localhost:1527/Login", "root", "root"
-Criar ADMIN: br.ufscar.dc.dsw.dao.CriaUsuarios.java
-usuario: admin@admin
+Criar Usuários: br.ufscar.dc.dsw.dao.CriaUsuarios.java
+Admin: admin@admin
 senha:admin
+para todos os outros usuários já criados a senha usada foi 123
+
+O trabalho apresenta problema com páginas anônimas, por isso é necessário logar com algum usuário para entrar.
+O trabalho também apresenta problema com a data e hora de promoção.
+
+O index apresenta:
+  Área de admin: área que apenas o admin pode entrar, lá é feito o crud de sites e teatros
+  Crud Promoção: área que apenas um teatro pode entrar, lá é feito o crud de promoções
+  Promoções: área que todos os usuários podem entrar, lá é listado todas as promoções
+  Promoção do site atual: área que apenas sites podem entrar, lá é mostrado todas as promoções que o site logado possui
+  Teatros: área que todos os usuários podem entrar, lá é listado todos os teatros cadastrados
+  Busca de Teatros por cidade: área que todos os usuários podem entrar, lá é mostrado a lista de teatros de acordo com a cidade
 
