@@ -23,7 +23,7 @@ public class Promocao implements Serializable {
     private Site site;
     @ManyToOne
     private Teatro teatro;
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIME)
     private Date diahorario;
 
     
