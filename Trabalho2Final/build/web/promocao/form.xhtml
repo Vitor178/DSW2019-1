@@ -42,17 +42,17 @@
                     <h:message for="preco"/>
                 </div>  
             </div>
-            <!--<div class="form-group">  
-                <h:outputLabel for="diahorario" class="control-label col-sm-4">#{msg['promocao.price.label']}</h:outputLabel>  
+            <div class="form-group">  
+                <h:outputLabel for="diahorario" class="control-label col-sm-4">#{msg['promocao.dateHour.label']}</h:outputLabel>  
                 <div class="col-sm-4">  
                     <h:inputText id="diahorario" value="#{promocaoBean.promocao.diahorario}" class="form-control"   
-                                 validatorMessage="#{msg['promocao.price.required.message']}"
-                                 a:type="datetime-local" a:step="any" a:min="2019-05-31T08:30">
+                                 validatorMessage="#{msg['promocao.dateHour.required.message']}" label="Receipt Date">
+                                 <f:convertDateTime dateStyle="long" timeZone="EST" type="both"/>
                         <f:validateRequired/>
                     </h:inputText>
                     <h:message for="diahorario"/>
                 </div>  
-            </div>-->
+            </div>
          
              <div class="form-group">  
                 <h:outputLabel for="site" class="control-label col-sm-4">#{msg['promocao.site.label']}</h:outputLabel>  
