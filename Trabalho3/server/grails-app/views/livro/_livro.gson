@@ -1,0 +1,19 @@
+import br.ufscar.dc.dsw.Livro
+
+model {
+	Livro livro
+}
+
+json {
+    id livro.id
+    autor livro.autor
+    titulo livro.titulo
+    ano livro.ano
+    preco livro.preco
+    editora {
+        id livro.editora.id
+        nome livro.editora.nome
+    }
+}
+
+

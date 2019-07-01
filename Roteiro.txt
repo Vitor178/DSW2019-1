@@ -7,6 +7,7 @@ senha:admin
 para todos os outros usuários já criados a senha usada foi 123
 
 O trabalho apresenta problema com páginas anônimas, por isso é necessário logar com algum usuário para entrar.
+
 O trabalho também apresenta problema com a data e hora de promoção.
 
 O index apresenta:

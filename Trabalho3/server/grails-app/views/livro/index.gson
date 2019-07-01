@@ -1,0 +1,8 @@
+import br.ufscar.dc.dsw.Livro
+
+model {
+	Iterable<Livro> livroList
+}
+
+json tmpl.livro(livroList ?: [])
+

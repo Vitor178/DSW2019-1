@@ -1,0 +1,7 @@
+import br.ufscar.dc.dsw.Livro
+
+model {
+	Livro livro
+}
+
+json tmpl.livro(livro)
